@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Debugging the gender gap!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Merriweather', serif;
+      background-color: #ffffff;
+      color: #222;
+    }
+    .sans {
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+    .nav-link {
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .hover-underline:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header/Nav -->
+  <header class="border-b border-gray-300 bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-3xl font-bold tracking-wide">Jumbo Hotdog</div>
+
+      <!-- Hamburger Button -->
+      <button id="menu-btn" class="block md:hidden text-gray-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <!-- Desktop Nav -->
+      <nav id="desktop-menu" class="hidden md:flex flex-row items-center space-x-6 sans relative">
+        <a href="index.html" class="nav-link text-gray-800 hover:text-orange-600">Home</a>
+        <a href="#" class="nav-link text-gray-800 hover:text-orange-600">About</a>
+        <div class="relative">
+          <button id="desktop-blog-toggle" class="nav-link text-gray-800 hover:text-orange-600 flex items-center">
+            Blogs ▾
+          </button>
+          <div id="desktop-blog-links" class="absolute top-full right-0 mt-2 w-64 bg-white border border-gray-200 shadow-lg hidden z-50 p-4 space-y-2 text-sm text-right">
+            <a href="maninang.html" class="block text-gray-700 hover:text-orange-600">Brains and Bots: The Ethical and Effective Way for Students to Use AI</a>
+            <hr>
+            <a href="featured.html" class="block text-gray-700 hover:text-orange-600">Computer Science ≠ Software Engineer: Versatile Job Opportunities of Computer Science Program Against a Competitive Job Market and Emergence of AI.</a>
+            <hr>
+            <a href="gurango.html" class="block text-gray-700 hover:text-orange-600">Debugging the Gender Gap!</a>
+            <hr>
+            <a href="parungao.html" class="block text-gray-700 hover:text-orange-600">Game Development: Choosing the Right Engine to Start</a>
+            <hr>
+            <a href="quilantang.html" class="block text-gray-700 hover:text-orange-600">Is AI the End of Programmers or Just the Beginning?</a>
+            <hr>
+            <a href="manese.html" class="block text-gray-700 hover:text-orange-600">Revolutionizing Modern Medicine Through Computer Science</a>
+            <hr>
+            <a href="gonzales.html" class="block text-gray-700 hover:text-orange-600">Tech Is Booming, But Why Do We Still Feel Cooked?</a>
+            <hr>
+            <a href="almanzor.html" class="block text-gray-700 hover:text-orange-600">BLABLA</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 space-y-2 sans">
+      <a href="index.html" class="block nav-link text-gray-800 hover:text-orange-600">Home</a>
+      <a href="#" class="block nav-link text-gray-800 hover:text-orange-600">About</a>
+      <div>
+        <button id="mobile-blog-toggle" class="block nav-link w-full text-left text-gray-800 hover:text-orange-600">Blogs ▾</button>
+        <div id="mobile-blog-links" class="pl-4 mt-1 space-y-1 hidden">
+          <a href="maninang.html" class="block text-gray-700 hover:text-orange-600">Brains and Bots: The Ethical and Effective Way for Students to Use AI</a>
+          <hr>
+          <a href="featured.html" class="block text-gray-700 hover:text-orange-600">Computer Science ≠ Software Engineer: Versatile Job Opportunities of Computer Science Program Against a Competitive Job Market and Emergence of AI.</a>
+          <hr>
+          <a href="gurango.html" class="block text-gray-700 hover:text-orange-600">Debugging the Gender Gap!</a>
+          <hr>
+          <a href="parungao.html" class="block text-gray-700 hover:text-orange-600">Game Development: Choosing the Right Engine to Start</a>
+          <hr>
+          <a href="quilantang.html" class="block text-gray-700 hover:text-orange-600">Is AI the End of Programmers or Just the Beginning?</a>
+          <hr>
+          <a href="manese.html" class="block text-gray-700 hover:text-orange-600">Revolutionizing Modern Medicine Through Computer Science</a>
+          <hr>
+          <a href="gonzales.html" class="block text-gray-700 hover:text-orange-600">Tech Is Booming, But Why Do We Still Feel Cooked?</a>
+          <hr>
+          <a href="almanzor.html" class="block text-gray-700 hover:text-orange-600">BLABLA</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- JS TOGGLE -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileBlogToggle = document.getElementById('mobile-blog-toggle');
+    const mobileBlogLinks = document.getElementById('mobile-blog-links');
+    const desktopBlogToggle = document.getElementById('desktop-blog-toggle');
+    const desktopBlogLinks = document.getElementById('desktop-blog-links');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileBlogToggle.addEventListener('click', () => {
+      mobileBlogLinks.classList.toggle('hidden');
+    });
+
+    desktopBlogToggle.addEventListener('click', () => {
+      desktopBlogLinks.classList.toggle('hidden');
+    });
+
+    // Optional: close dropdown if click outside
+    document.addEventListener('click', (e) => {
+      const isDesktopButton = desktopBlogToggle.contains(e.target);
+      const isDropdown = desktopBlogLinks.contains(e.target);
+      if (!isDesktopButton && !isDropdown) {
+        desktopBlogLinks.classList.add('hidden');
+      }
+    });
+  </script>
+
+  <!-- Article -->
+  <section class="max-w-3xl mx-auto px-6 py-12">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4 leading-snug text-orange-700">Debugging the gender gap! </h1>
+
+    <div class="mb-6">
+      <img src="gurango.PNG" alt="Gurango image" class="w-full h-80 object-contain rounded shadow mb-2">
+      <p class="text-xs text-gray-500 text-right italic">Photo by <a class="hover:underline text-orange-700">Christine Francoise Gurango</a></p>
+    </div>
+
+    <p class="text-sm text-gray-600 italic mb-4 sans">By Christine Francoise Gurango &middot; July 22, 2025</p>
+
+    <div class="space-y-6 text-lg leading-relaxed">
+      <p class="indent-8">While walking around the School of Computing (SOC) booths during the freshmen orientation and general assembly, I noticed that there were many stickers promoting women in IT fields, such as “Women in Tech” and similar messages. I actually have one of those stickers, by the way. Upon noticing it, I realized that in the past, whenever people talked about the tech or IT field, it was usually perceived as male-dominated; women in this industry were considered unusual. </p>
+
+      <p class="indent-8">I remember my sister, who also took Computer Science as her major. Most of her friends are men; only about two or four of them are women. This made me curious about what is behind this imbalance? Why are there so few women in the tech field? And why, when we think of success in techm do names like Mark Zuckerberg (behind Facebook), Steve Jobs (behind Apple), and Bill Gates (co-founder of Microsoft) immediately come to mind? I noticed that most of the people we associate with success in this field are men. That moment sparked my interest and pushed me to research the root of this gender inequality in tech. </p>
+
+      <p class="indent-8">According to The Gender Gap in Tech...Let’s Talk About It (n.d.), societies are heavily influenced by gender expectations, which can shape career choices, workplace opportunities, the way we dress, how we should act, what we should study, and more. Due to these gender-based societal norms, both men and women tend to make career decisions based on what is expected of them. For example, 97.78% of nurses and nursing assistants, 95.65% of legal secretaries, 89.09% of dancers and choreographers, and 88.45% of receptionists are women. Conversely, 99.19% of vehicle technicians, 98.97% of carpenters and joiners, 96.4% of electrical and electronic technicians, and 95.38% of telecoms engineers are men. Engineering, including computer engineering, is typically male-dominated. Furthermore, according to the International Labour Organization, women are more likely to work in sectors that pay less than male-dominated industries. </p>
+
+      <p class="indent-8">In addition, I found a study discussing the lack of mathematical confidence among women compared to men. According to Ellis et al. (2016), when comparing women and men with above-average mathematical abilities, women begin and end the term with significantly lower levels of confidence. A lack of mathematical confidence, rather than actual ability, may be responsible for the high dropout rate of women in STEM fields. </p>
+
+      <h1 class="text-3xl md:text-2xl font-bold mb-3 leading-snug text-orange-700">BUT NOT ANYMORE! </h1>
+
+      <p class="indent-8">We are now in the 21st century. These are countless articles and studies addressing this issue. However, instead of only highlighting the gender gap, more recent articles emphasize the progress being made, like “Female computing students closed the gap on men in 2024” and “Number of women taking computer science degrees continues to grow.” These show that people now pursue careers based on passion and ability, regardless of gender.</p>
+
+      <p class="indent-8">Also, while studying here as a Computer Science major, I learned something fascinating: the first person to write a program for programmable computer was Ada Lovelace. She is recognized as the world’s first computer programmer. The fact alone made me realize how deeply rooted women are in the history of technology, even if history hasn’t always given them the recognition they deserve. It empowered me to believe that I, too, belong in this field; not just as a participant, but as an innovator, a leader, and a changemaker in tech.</p>
+
+    </div>
+<!--Ref-->
+    <div class="mt-10">
+      <h2 class="text-2xl font-bold mb-4 text-orange-700">References</h2>
+      <ul class="list-disc pl-5 text-sm space-y-2">
+        <li><a href="https://www.ironhack.com/us/blog/the-gender-gap-in-tech-let-s-talk-about-it" target="_blank" class="text-orange-700 hover:underline">The gender gap in Tech. . .Let’s talk about it. (n.d.).</a></li>
+        <li><a href="https://doi.org/10.1371/journal.pone.0157447" target="_blank" class="text-orange-700 hover:underline">Ellis, J., Fosdick, B. K., & Rasmussen, C. (2016). Women 1.5 Times More Likely to Leave STEM Pipeline after Calculus Compared to Men: Lack of Mathematical Confidence a Potential Culprit. PLoS ONE, 11(7), e0157447. </a></li>
+        <li><a href="https://www.bcs.org/articles-opinion-and-research/female-computing-students-closed-the-gap-on-men-in-2024-new-data-shows/"class="text-orange-700 hover:underline">Female computing students closed the gap on men in 2024 – new data shows. (2024, December 17).</a></li>
+      </ul>
+    </div>
+
+    <div class="mt-10">
+      <a href="index.html" class="inline-block text-sm text-orange-700 border border-orange-700 rounded-full px-6 py-2 hover:bg-orange-50 transition sans"> Back to Home</a>
+    </div>
+  </section>
+
+  <footer class="border-t py-6 mt-12 bg-white">
+    <div class="max-w-6xl mx-auto px-6 text-center text-sm text-gray-500 sans">
+      &copy; 2025 Jumbo Hotdog. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

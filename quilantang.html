@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Is AI the End of Programmers or Just the Beginning?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Merriweather', serif;
+      background-color: #ffffff;
+      color: #222;
+    }
+    .sans {
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+    .nav-link {
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .hover-underline:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header/Nav -->
+  <header class="border-b border-gray-300 bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-3xl font-bold tracking-wide">Jumbo Hotdog</div>
+
+      <!-- Hamburger Button -->
+      <button id="menu-btn" class="block md:hidden text-gray-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <!-- Desktop Nav -->
+      <nav id="desktop-menu" class="hidden md:flex flex-row items-center space-x-6 sans relative">
+        <a href="index.html" class="nav-link text-gray-800 hover:text-orange-600">Home</a>
+        <a href="#" class="nav-link text-gray-800 hover:text-orange-600">About</a>
+        <div class="relative">
+          <button id="desktop-blog-toggle" class="nav-link text-gray-800 hover:text-orange-600 flex items-center">
+            Blogs ▾
+          </button>
+          <div id="desktop-blog-links" class="absolute top-full right-0 mt-2 w-64 bg-white border border-gray-200 shadow-lg hidden z-50 p-4 space-y-2 text-sm text-right">
+            <a href="maninang.html" class="block text-gray-700 hover:text-orange-600">Brains and Bots: The Ethical and Effective Way for Students to Use AI</a>
+            <hr>
+            <a href="featured.html" class="block text-gray-700 hover:text-orange-600">Computer Science ≠ Software Engineer: Versatile Job Opportunities of Computer Science Program Against a Competitive Job Market and Emergence of AI.</a>
+            <hr>
+            <a href="gurango.html" class="block text-gray-700 hover:text-orange-600">Debugging the Gender Gap!</a>
+            <hr>
+            <a href="parungao.html" class="block text-gray-700 hover:text-orange-600">Game Development: Choosing the Right Engine to Start</a>
+            <hr>
+            <a href="quilantang.html" class="block text-gray-700 hover:text-orange-600">Is AI the End of Programmers or Just the Beginning?</a>
+            <hr>
+            <a href="manese.html" class="block text-gray-700 hover:text-orange-600">Revolutionizing Modern Medicine Through Computer Science</a>
+            <hr>
+            <a href="gonzales.html" class="block text-gray-700 hover:text-orange-600">Tech Is Booming, But Why Do We Still Feel Cooked?</a>
+            <hr>
+            <a href="almanzor.html" class="block text-gray-700 hover:text-orange-600">BLABLA</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 space-y-2 sans">
+      <a href="index.html" class="block nav-link text-gray-800 hover:text-orange-600">Home</a>
+      <a href="#" class="block nav-link text-gray-800 hover:text-orange-600">About</a>
+      <div>
+        <button id="mobile-blog-toggle" class="block nav-link w-full text-left text-gray-800 hover:text-orange-600">Blogs ▾</button>
+        <div id="mobile-blog-links" class="pl-4 mt-1 space-y-1 hidden">
+          <a href="maninang.html" class="block text-gray-700 hover:text-orange-600">Brains and Bots: The Ethical and Effective Way for Students to Use AI</a>
+          <hr>
+          <a href="featured.html" class="block text-gray-700 hover:text-orange-600">Computer Science ≠ Software Engineer: Versatile Job Opportunities of Computer Science Program Against a Competitive Job Market and Emergence of AI.</a>
+          <hr>
+          <a href="gurango.html" class="block text-gray-700 hover:text-orange-600">Debugging the Gender Gap!</a>
+          <hr>
+          <a href="parungao.html" class="block text-gray-700 hover:text-orange-600">Game Development: Choosing the Right Engine to Start</a>
+          <hr>
+          <a href="quilantang.html" class="block text-gray-700 hover:text-orange-600">Is AI the End of Programmers or Just the Beginning?</a>
+          <hr>
+          <a href="manese.html" class="block text-gray-700 hover:text-orange-600">Revolutionizing Modern Medicine Through Computer Science</a>
+          <hr>
+          <a href="gonzales.html" class="block text-gray-700 hover:text-orange-600">Tech Is Booming, But Why Do We Still Feel Cooked?</a>
+          <hr>
+          <a href="almanzor.html" class="block text-gray-700 hover:text-orange-600">BLABLA</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- JS TOGGLE -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileBlogToggle = document.getElementById('mobile-blog-toggle');
+    const mobileBlogLinks = document.getElementById('mobile-blog-links');
+    const desktopBlogToggle = document.getElementById('desktop-blog-toggle');
+    const desktopBlogLinks = document.getElementById('desktop-blog-links');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileBlogToggle.addEventListener('click', () => {
+      mobileBlogLinks.classList.toggle('hidden');
+    });
+
+    desktopBlogToggle.addEventListener('click', () => {
+      desktopBlogLinks.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', (e) => {
+      const isDesktopButton = desktopBlogToggle.contains(e.target);
+      const isDropdown = desktopBlogLinks.contains(e.target);
+      if (!isDesktopButton && !isDropdown) {
+        desktopBlogLinks.classList.add('hidden');
+      }
+    });
+  </script>
+  <!-- Article -->
+  <section class="max-w-3xl mx-auto px-6 py-12">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4 leading-snug text-orange-700">Is AI the End of Programmers or Just the Beginning?<h1>
+
+    <div class="mb-6">
+      <img src="https://www.thebrighterside.news/uploads/2024/10/AI-and-humans.webp?format=auto&optimize=high&width=1440" alt="quilantang image image" class="w-full h-80 object-cover rounded shadow mb-2">
+      <p class="text-xs text-gray-500 text-right italic">Photo by <a href="https://www.thebrighterside.news/post/do-humans-and-ai-work-better-together-or-alone-surprising-mit-findings/" target="_blank" class="hover:underline text-orange-700">Joshua Shavit</a> on thebrighterside</p>
+    </div>
+
+    <p class="text-sm text-gray-600 italic mb-4 sans">By Grant Mihkael Quilantang &middot; July 22, 2025</p>
+
+    <div class="space-y-6 text-lg leading-relaxed">
+      <p class="indent-8">I've been hearing the same questions lately: "Will programmers be replaced by AI?"The fear is constant, whether it's on YouTube, TikTok, or even in casual conversations with friends and classmates. "Wala na, mawawalan na tayo ng trabaho" is a joke that is made whenever ChatGPT or GitHub Copilot is mentioned. </p>
+
+      <p class="indent-8">And truthfully? For me, it was the same. When I used ChatGPT for a Python code in my first year of study, I was astounded. In just a few seconds, I got the code. It also clarified how it worked and even helped me fix the errors.  I honestly wondered for a while, "So ito ung pag-aaralan ko ng four years? Para saan pa?"</p>
+
+      <p class="indent-8">However, following that brief panic attack, I came to a significant realization. AI isn't all-inclusive. Yes, it provided me with answers. However, I still needed to comprehend what was happening. I had to comprehend the code, modify it, test it, and sometimes start from scratch. Although the code helped me get started, I will always be responsible for finishing it.</p>
+
+      <p class="indent-8">And let's be honest, the fear has some validity. A 2024 Mckinsey report estimates that AI could automate roughly 30% of coding-related tasks, especially repetitive ones like bug fixes and boilerplate code. Furthermore, only 43% of developers actually trust AI tools, despite 76% of them using them now, according to the Stack Overflow 2024 Developer Survey. Thus, while AI is here, people aren't prepared to fully embrace it. not yet in control.And it makes sense. Developers who used Copilot reported that it sped up their work, but they still had to check and fix its code to prevent bugs or security threats, according to the MIT Technology Review. In other words, AI can help, but it still requires a skilled person behind the screen.</p>
+
+      <p class="indent-8">Most experts do not believe that AI will replace developers. It will just change how we do things. Instead of working long hours on monotonous, repetitive tasks, we will devote more time to solving real problems, coming up with creative solutions, and designing systems. Artificial intelligence is a tool, not a threat, unless we don't know how to use it properly. That's the problem. Our jobs won't be replaced by AI. However, someone who is capable of using AI? They might. As with any technological shift, those who adapt will be the ones who thrive. We can't just depend on what we already know. We need to keep learning, stay curious, and figure out how to use AI to our benefit rather than against it.</p>
+
+      <p class="indent-8">AI is indeed fast. Yes, it's clever. It still can't think like a human, though. It doesn't comprehend the goal of your project, the peculiar requests of your client, or those late-night creative bursts that are unique to humans. We still have that advantage.</p>
+
+      <p class="indent-8">Will AI take our place, then? Not at all. But it's okay because it will change us. It serves as a reminder to keep developing, growing, and creating—not just with code, but with confidence as well.</p>
+
+      <p class="indent-8">We will not be replaced. We are simply evolving.</p>
+    </div>
+
+<!--Ref-->
+    <div class="mt-10">
+      <h2 class="text-2xl font-bold mb-4 text-orange-700">References</h2>
+      <ul class="list-disc pl-5 text-sm space-y-2">
+        <li><a href="https://www.mckinsey.com/mgi/our-research/technology-and-innovation/the-economic-potential-of-generative-ai-the-next-productivity-frontier" target="_blank" class="text-orange-700 hover:underline">Chui, M., Hazan, E., Roberts, R., Singla, A., Smaje, K., Sukharevsky, A., Yee, L., & Zemmel, R. (2023, June 13). The economic potential of generative AI: The next productivity frontier. McKinsey & Company.</a></li>
+        <li><a href="https://www.technologyreview.com/2023/12/06/1084457/ai-assistants-copilot-changing-code-software-development-github-openai/" target="_blank" class="text-orange-700 hover:underline">Heaven, W. D. (2023, December 6). How AI assistants are already changing the way code gets made. MIT Technology Review.</a></li>
+        <li><a href="https://survey.stackoverflow.co/2024/" target="_blank" class="text-orange-700 hover:underline">2024 Stack Overflow Developer Survey. (2024). Stackoverflow.co. </a></li>
+      </ul>
+    </div>
+
+    <div class="mt-10">
+      <a href="index.html" class="inline-block text-sm text-orange-700 border border-orange-700 rounded-full px-6 py-2 hover:bg-orange-50 transition sans"> Back to Home</a>
+    </div>
+  </section>
+
+  <footer class="border-t py-6 mt-12 bg-white">
+    <div class="max-w-6xl mx-auto px-6 text-center text-sm text-gray-500 sans">
+      &copy; 2025 Jumbo Hotdog. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

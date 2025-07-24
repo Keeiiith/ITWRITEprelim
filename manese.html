@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Revolutionizing Modern Medicine Through Computer Science</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Merriweather', serif;
+      background-color: #ffffff;
+      color: #222;
+    }
+    .sans {
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+    .nav-link {
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .hover-underline:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header/Nav -->
+  <header class="border-b border-gray-300 bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-3xl font-bold tracking-wide">Jumbo Hotdog</div>
+
+      <!-- Hamburger Button -->
+      <button id="menu-btn" class="block md:hidden text-gray-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <!-- Desktop Nav -->
+      <nav id="desktop-menu" class="hidden md:flex flex-row items-center space-x-6 sans relative">
+        <a href="index.html" class="nav-link text-gray-800 hover:text-orange-600">Home</a>
+        <a href="#" class="nav-link text-gray-800 hover:text-orange-600">About</a>
+        <div class="relative">
+          <button id="desktop-blog-toggle" class="nav-link text-gray-800 hover:text-orange-600 flex items-center">
+            Blogs ▾
+          </button>
+          <div id="desktop-blog-links" class="absolute top-full right-0 mt-2 w-64 bg-white border border-gray-200 shadow-lg hidden z-50 p-4 space-y-2 text-sm text-right">
+            <a href="maninang.html" class="block text-gray-700 hover:text-orange-600">Brains and Bots: The Ethical and Effective Way for Students to Use AI</a>
+            <hr>
+            <a href="featured.html" class="block text-gray-700 hover:text-orange-600">Computer Science ≠ Software Engineer: Versatile Job Opportunities of Computer Science Program Against a Competitive Job Market and Emergence of AI.</a>
+            <hr>
+            <a href="gurango.html" class="block text-gray-700 hover:text-orange-600">Debugging the Gender Gap!</a>
+            <hr>
+            <a href="parungao.html" class="block text-gray-700 hover:text-orange-600">Game Development: Choosing the Right Engine to Start</a>
+            <hr>
+            <a href="quilantang.html" class="block text-gray-700 hover:text-orange-600">Is AI the End of Programmers or Just the Beginning?</a>
+            <hr>
+            <a href="manese.html" class="block text-gray-700 hover:text-orange-600">Revolutionizing Modern Medicine Through Computer Science</a>
+            <hr>
+            <a href="gonzales.html" class="block text-gray-700 hover:text-orange-600">Tech Is Booming, But Why Do We Still Feel Cooked?</a>
+            <hr>
+            <a href="almanzor.html" class="block text-gray-700 hover:text-orange-600">BLABLA</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 space-y-2 sans">
+      <a href="index.html" class="block nav-link text-gray-800 hover:text-orange-600">Home</a>
+      <a href="#" class="block nav-link text-gray-800 hover:text-orange-600">About</a>
+      <div>
+        <button id="mobile-blog-toggle" class="block nav-link w-full text-left text-gray-800 hover:text-orange-600">Blogs ▾</button>
+        <div id="mobile-blog-links" class="pl-4 mt-1 space-y-1 hidden">
+          <a href="maninang.html" class="block text-gray-700 hover:text-orange-600">Brains and Bots: The Ethical and Effective Way for Students to Use AI</a>
+          <hr>
+          <a href="featured.html" class="block text-gray-700 hover:text-orange-600">Computer Science ≠ Software Engineer: Versatile Job Opportunities of Computer Science Program Against a Competitive Job Market and Emergence of AI.</a>
+          <hr>
+          <a href="gurango.html" class="block text-gray-700 hover:text-orange-600">Debugging the Gender Gap!</a>
+          <hr>
+          <a href="parungao.html" class="block text-gray-700 hover:text-orange-600">Game Development: Choosing the Right Engine to Start</a>
+          <hr>
+          <a href="quilantang.html" class="block text-gray-700 hover:text-orange-600">Is AI the End of Programmers or Just the Beginning?</a>
+          <hr>
+          <a href="manese.html" class="block text-gray-700 hover:text-orange-600">Revolutionizing Modern Medicine Through Computer Science</a>
+          <hr>
+          <a href="gonzales.html" class="block text-gray-700 hover:text-orange-600">Tech Is Booming, But Why Do We Still Feel Cooked?</a>
+          <hr>
+          <a href="almanzor.html" class="block text-gray-700 hover:text-orange-600">BLABLA</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- JS TOGGLE -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileBlogToggle = document.getElementById('mobile-blog-toggle');
+    const mobileBlogLinks = document.getElementById('mobile-blog-links');
+    const desktopBlogToggle = document.getElementById('desktop-blog-toggle');
+    const desktopBlogLinks = document.getElementById('desktop-blog-links');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileBlogToggle.addEventListener('click', () => {
+      mobileBlogLinks.classList.toggle('hidden');
+    });
+
+    desktopBlogToggle.addEventListener('click', () => {
+      desktopBlogLinks.classList.toggle('hidden');
+    });
+
+    // Optional: close dropdown if click outside
+    document.addEventListener('click', (e) => {
+      const isDesktopButton = desktopBlogToggle.contains(e.target);
+      const isDropdown = desktopBlogLinks.contains(e.target);
+      if (!isDesktopButton && !isDropdown) {
+        desktopBlogLinks.classList.add('hidden');
+      }
+    });
+  </script>
+
+  <!-- Article -->
+  <section class="max-w-3xl mx-auto px-6 py-12">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4 leading-snug text-orange-700">Revolutionizing Modern Medicine Through Computer Science<h1>
+
+    <div class="mb-6">
+      <img src="https://catalinaimaging.com/wp-content/uploads/2017/01/why-choose-us-2-min.jpg" alt="manese image" class="w-full h-80 object-cover rounded shadow mb-2">
+      <p class="text-xs text-gray-500 text-right italic">Photo by <a href="https://images.app.goo.gl/ZzRnsYiSEQsjJ8qw6" target="_blank" class="hover:underline text-orange-700"> TVN24</a></p>
+    </div>
+
+    <p class="text-sm text-gray-600 italic mb-4 sans">By Carl Joshua Manese &middot; July 22, 2025</p>
+
+       <div class="space-y-6 text-lg leading-relaxed">
+      <p class="indent-8">Computer Science has become an essential part of many businesses and industries, but it’s especially significant to the progression of how we tackle healthcare and modern medicines. As of now, most computers have been used to help with understanding illnesses and healthcare solutions with the aid of digital models and electronic devices. However, with the rise of Artificial Intelligence (AI) technology, other applications have begun to rise and change the healthcare world forever.</p>
+        <h1 class="text-3xl md:text-2xl font-bold mb-3 leading-snug text-orange-700">What is AI?</h1>
+      <p class="indent-8">Artificial Intelligence (AI) is a branch of computer science that deals with programming an algorithm that can learn information based on the amount of data that the engineers would feed them. AI is commonly used for recognizing speech patterns, making decisions based on the best outcomes, and as a translator for non-native languages. The ability of an AI to take in multiple data and come up with a prediction based on the symptoms makes it a great tool for healthcare applications.</p>
+        <h1 class="text-3xl md:text-2xl font-bold mb-3 leading-snug text-orange-700">Artificial Intelligence and Diagnosis</h1>
+
+      <p class="indent-8">AI can be thought to learn and predict outcomes based on the common symptoms a patient may have. Unlike humans, AI is not burdened by biased opinions, prejudice, and laziness. Companies like AiCure have used AI to better understand the connection between a patient and their illnesses, while other companies like Insitro have used advanced machine learning to reduce the amount of time and money spent for diagnosing the required drug for each patient.</p>
+        <h1 class="text-3xl md:text-2xl font-bold mb-3 leading-snug text-orange-700">Computer Techniques and Healthcare</h1>
+
+      <p class="indent-8">Keeping medicinal information secure and stored for a long time is important when it comes to keeping patients informed, and recording their previous illnesses for future diagnoses. A computerized information system for the hospital is a valuable tool for establishing easy access to the hospital’s data storage, transactions, and valuable patient information. Computers can also assist in making decisions to support doctors with the machine’s ability to have a vast memory and processing power. Computers may also assist in taking care of critically ill patients by keeping a close eye on them, where most humans would have been burdened by the loss of focus and being crowded with other tasks.  </p>
+        <h1 class="text-3xl md:text-2xl font-bold mb-3 leading-snug text-orange-700">Ethical Concerns: Humans or Objects?</h1>
+
+      <p class="indent-8">A critical issue that engineers must avoid is the ethical concerns that an AI may cross when performing a task. One of the ethical guidelines of the (High-Level Expert Group) HLEG for artificial intelligence is that AI has to respect the worth of a human’s life. It must never regard humans as objects it needs to fix, but as a human with emotions and beliefs. Engineers must make sure that their machine should learn to avoid hurting their patient’s emotions unless necessary. However, no amount of coding and technical workings would let the system understand and learn emotional intelligence, and so it remains important to have medical decisions made with AI be required to have a human assessment before any action is made.</p>
+        <h1 class="text-3xl md:text-2xl font-bold mb-3 leading-snug text-orange-700">To Conclude,</h1>
+
+      <p class="indent-8">Advanced computers and Artificial Intelligence can be used as a valuable tool for healthcare technologies, as they can handle redundant tasks to free the staff to deal with more complicated tasks. Computers are also incapable of human burdens by having a consistently strong memory, unbiased nature, and longevity. However, we as humans must still remember the value of our humanity and remind ourselves that AI may never replace our sense of emotional values and ethical concerns. Overall, the future of healthcare will benefit with the addition of computer science and AI, provided it is supervised by the humans that made it.</p>
+
+    </div>
+
+    <!--Ref-->
+    <div class="mt-10">
+      <h2 class="text-2xl font-bold mb-4 text-orange-700">References</h2>
+      <ul class="list-disc pl-5 text-sm space-y-2">
+        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7640807/" target="_blank" class="text-orange-700 hover:underline">Basu, K., Sinha, R., Ong, A., & Basu, T. (2020). Artificial intelligence: How is it changing medical sciences and its future?</a></li>
+        <li><a href="https://link.springer.com/chapter/10.1007/978-3-030-57321-8_12" target="_blank" class="text-orange-700 hover:underline">Schneeberger, D., Stöger, K., & Holzinger, A. (2020, August 18). The European legal framework for medical AI.</a></li>
+        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6257447/" target="_blank" class="text-orange-700 hover:underline">Mehta, V. K., Deb, P. S., & Rao, D. S. (2017, June 27). Application of computer techniques in medicine. </a></li>
+      </ul>
+    </div>
+
+    <div class="mt-10">
+      <a href="index.html" class="inline-block text-sm text-orange-700 border border-orange-700 rounded-full px-6 py-2 hover:bg-orange-50 transition sans"> Back to Home</a>
+    </div>
+  </section>
+
+  <footer class="border-t py-6 mt-12 bg-white">
+    <div class="max-w-6xl mx-auto px-6 text-center text-sm text-gray-500 sans">
+      &copy; 2025 Jumbo Hotdog. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

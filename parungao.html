@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Game Development: Choosing the Right Engine to Start</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Merriweather', serif;
+      background-color: #ffffff;
+      color: #222;
+    }
+    .sans {
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+    .nav-link {
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .hover-underline:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header/Nav -->
+  <header class="border-b border-gray-300 bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-3xl font-bold tracking-wide">Jumbo Hotdog</div>
+
+      <!-- Hamburger Button -->
+      <button id="menu-btn" class="block md:hidden text-gray-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <!-- Desktop Nav -->
+      <nav id="desktop-menu" class="hidden md:flex flex-row items-center space-x-6 sans relative">
+        <a href="index.html" class="nav-link text-gray-800 hover:text-orange-600">Home</a>
+        <a href="#" class="nav-link text-gray-800 hover:text-orange-600">About</a>
+        <div class="relative">
+          <button id="desktop-blog-toggle" class="nav-link text-gray-800 hover:text-orange-600 flex items-center">
+            Blogs ▾
+          </button>
+          <div id="desktop-blog-links" class="absolute top-full right-0 mt-2 w-64 bg-white border border-gray-200 shadow-lg hidden z-50 p-4 space-y-2 text-sm text-right">
+            <a href="maninang.html" class="block text-gray-700 hover:text-orange-600">Brains and Bots: The Ethical and Effective Way for Students to Use AI</a>
+            <hr>
+            <a href="featured.html" class="block text-gray-700 hover:text-orange-600">Computer Science ≠ Software Engineer: Versatile Job Opportunities of Computer Science Program Against a Competitive Job Market and Emergence of AI.</a>
+            <hr>
+            <a href="gurango.html" class="block text-gray-700 hover:text-orange-600">Debugging the Gender Gap!</a>
+            <hr>
+            <a href="parungao.html" class="block text-gray-700 hover:text-orange-600">Game Development: Choosing the Right Engine to Start</a>
+            <hr>
+            <a href="quilantang.html" class="block text-gray-700 hover:text-orange-600">Is AI the End of Programmers or Just the Beginning?</a>
+            <hr>
+            <a href="manese.html" class="block text-gray-700 hover:text-orange-600">Revolutionizing Modern Medicine Through Computer Science</a>
+            <hr>
+            <a href="gonzales.html" class="block text-gray-700 hover:text-orange-600">Tech Is Booming, But Why Do We Still Feel Cooked?</a>
+            <hr>
+            <a href="almanzor.html" class="block text-gray-700 hover:text-orange-600">BLABLA</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 space-y-2 sans">
+      <a href="index.html" class="block nav-link text-gray-800 hover:text-orange-600">Home</a>
+      <a href="#" class="block nav-link text-gray-800 hover:text-orange-600">About</a>
+      <div>
+        <button id="mobile-blog-toggle" class="block nav-link w-full text-left text-gray-800 hover:text-orange-600">Blogs ▾</button>
+        <div id="mobile-blog-links" class="pl-4 mt-1 space-y-1 hidden">
+          <a href="maninang.html" class="block text-gray-700 hover:text-orange-600">Brains and Bots: The Ethical and Effective Way for Students to Use AI</a>
+          <hr>
+          <a href="featured.html" class="block text-gray-700 hover:text-orange-600">Computer Science ≠ Software Engineer: Versatile Job Opportunities of Computer Science Program Against a Competitive Job Market and Emergence of AI.</a>
+          <hr>
+          <a href="gurango.html" class="block text-gray-700 hover:text-orange-600">Debugging the Gender Gap!</a>
+          <hr>
+          <a href="parungao.html" class="block text-gray-700 hover:text-orange-600">Game Development: Choosing the Right Engine to Start</a>
+          <hr>
+          <a href="quilantang.html" class="block text-gray-700 hover:text-orange-600">Is AI the End of Programmers or Just the Beginning?</a>
+          <hr>
+          <a href="manese.html" class="block text-gray-700 hover:text-orange-600">Revolutionizing Modern Medicine Through Computer Science</a>
+          <hr>
+          <a href="gonzales.html" class="block text-gray-700 hover:text-orange-600">Tech Is Booming, But Why Do We Still Feel Cooked?</a>
+          <hr>
+          <a href="almanzor.html" class="block text-gray-700 hover:text-orange-600">BLABLA</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- JS TOGGLE -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileBlogToggle = document.getElementById('mobile-blog-toggle');
+    const mobileBlogLinks = document.getElementById('mobile-blog-links');
+    const desktopBlogToggle = document.getElementById('desktop-blog-toggle');
+    const desktopBlogLinks = document.getElementById('desktop-blog-links');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileBlogToggle.addEventListener('click', () => {
+      mobileBlogLinks.classList.toggle('hidden');
+    });
+
+    desktopBlogToggle.addEventListener('click', () => {
+      desktopBlogLinks.classList.toggle('hidden');
+    });
+
+    // Optional: close dropdown if click outside
+    document.addEventListener('click', (e) => {
+      const isDesktopButton = desktopBlogToggle.contains(e.target);
+      const isDropdown = desktopBlogLinks.contains(e.target);
+      if (!isDesktopButton && !isDropdown) {
+        desktopBlogLinks.classList.add('hidden');
+      }
+    });
+  </script>
+
+  <!-- Article -->
+  <section class="max-w-3xl mx-auto px-6 py-12">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4 leading-snug text-orange-700">Game Development: Choosing the Right Engine to Start</h1>
+
+    <div class="mb-6">
+      <img src="https://www.shawnee.edu/sites/default/files/2025-04/game-design-animation-and-simulation.jpg" alt="Technology workspace" class="w-full h-80 object-cover rounded shadow mb-2">
+      <p class="text-xs text-gray-500 text-right italic">Photo by <a href="www.shutterstock.com/video/search/video-game-development?dd_referrer=https%3A%2F%2Fwww.google.com%2F" target="_blank" class="hover:underline text-orange-700">Gorodenkoff</a> on shutterstock</p>
+    </div>
+
+    <p class="text-sm text-gray-600 italic mb-4 sans">By Nikko S. Parungao &middot; July 22, 2025</p>
+
+    <div class="space-y-6 text-lg leading-relaxed">
+      <p class="indent-8">Gaming is my all-time favorite hobby. One of my earliest memories, at just four years old, was playing the classic Plants vs Zombies on our old desktop computer. Since then, my love for this hobby has only increased. What stemmed from this, however, is my curiosity for how it is made. This is where game development comes in. It is how games are made from a vision, into a playable masterpiece. At the heart of this process is the game engine, the central platform that runs the game. For beginners like me, there are two choices to pick from: Unity and Unreal.</p>
+    
+      <p class="indent-8">To understand how games are built, it is important to define what a game engine is. A game engine is a software framework optimized and specialized for the development of a video game. It includes the following as a software environment: 2D and 3D rendering pipelines, tweakable physics engine that simulates real life, sound engine, and script compilers (Arm Ltd., n.d.). These tools work together to ensure that a developed game runs and performs efficiently.</p>
+    
+      <p class="indent-8">Now that we know what game engines are, we can focus on the first engine, Unity. This engine has produced tons of your favorite games, such as Among Us, Pokémon Go, Cuphead, Genshin Impact, Fall Guys, and more (Team, 2024). As seen with these games, it can be used by a solo developer to a full-blown gaming company. This goes to show its flexibility, which is greatly contributed to by C#, the programming language used for the engine. This makes it easy to develop for students like me who are familiar with the language’s concepts and syntax. Furthermore, its cross-platform compatibility, wide range of dependencies, well-documented nature, and community support make it appealing for beginners (Juris, 2024). In contrast to its benefits, one of its major drawbacks is its lack of graphical fidelity. It lacks the tools and technologies to push graphics to their absolute limit, mimicking that of real life.</p>
+    
+      <p class="indent-8">In contrast, Unreal Engine puts graphical fidelity at the forefront, setting it apart from Unity. Games made by Unreal include Fortnite, Final Fantasy VII Remake, Black Myth: Wukong, and more. These games have one thing in common: they all look graphically stunning. Unlike Unity, Unreal provides advanced technologies such as Nanite (for real-time geometry) and Lumen (for dynamic lighting), giving developers the tools to pursue photorealism (Epic Games, 2023). Furthermore, Unreal uses C++, which is a complex programming language, but it allows for more direct manipulation of the computer’s components. This benefits advanced developers but presents a hurdle for most beginners. That is why it has an alternative method for manual scripting called Blueprints. It is a visual representation of scripting made for beginners. Instead of writing code to create and link variables, Blueprints use visual building blocks that can be connected with lines to control logic and variables. However, these benefits come at a cost: performance. Because Unreal prioritizes graphical fidelity, it demands higher-end hardware. This makes it difficult for students with low-spec machines to run, let alone develop games on the platform.</p>
+    
+      <p class="indent-8">Game Development is a lengthy process of making a game, and at its start is choosing a game engine. It would be in charge of most of the processes the game needs to run. As a beginner, we have two choices. The first is Unity with its flexibility, cross-platform, mature documentation, and community, making it attractive for beginners but lacking that of graphical fidelity. In contrast, Unreal prioritizes graphics but requires stronger hardware. Each engine has its own strengths and weaknesses. There is no one glove that fits all. Instead, choose the engine that aligns with your own goals and vision.</p>
+    
+    </div>
+
+    <div class="mt-10">
+      <h2 class="text-2xl font-bold mb-4 text-orange-700">References</h2>
+      <ul class="list-disc pl-5 text-sm space-y-2">
+        <li><a href="https://www.arm.com/glossary/gaming-engines" target="_blank" class="text-orange-700 hover:underline">Arm Ltd. (n.d.). What is a Gaming Engine? Arm | the Architecture for the Digital World.</a></li>
+        <li><a href="https://www.create-learn.us/blog/top-games-made-with-unity/" target="_blank" class="text-orange-700 hover:underline">Team, C. &. L. (2024, September 16). 10 Top Games Made with Unity: Unity Game Programming. Kids’ Coding Corner | Create & Learn. </a></li>
+        <li><a href="https://medium.com/@juris.savos/a-few-reasons-to-learn-unity-in-2024-45cbc981db64" target="_blank" class="text-orange-700 hover:underline">Juris. (2024, January 2). A few reasons to learn unity in 2024 - Juris - medium. Medium. </a></li>
+        <li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-5.3-release-notes?application_version=5.3" target="_blank" class="text-orange-700 hover:underline">Epic Games. (2023). Unreal Engine 5.3 Release Notes. Unreal Engine Documentation.</a></li>
+      </ul>
+    </div>
+
+    <div class="mt-10">
+      <a href="index.html" class="inline-block text-sm text-orange-700 border border-orange-700 rounded-full px-6 py-2 hover:bg-orange-50 transition sans"> Back to Home</a>
+    </div>
+  </section>
+
+  <footer class="border-t py-6 mt-12 bg-white">
+    <div class="max-w-6xl mx-auto px-6 text-center text-sm text-gray-500 sans">
+      &copy; 2025 Jumbo Hotdog. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

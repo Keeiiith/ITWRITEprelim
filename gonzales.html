@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tech Is Booming, But Why Do We Still Feel Cooked?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Merriweather', serif;
+      background-color: #ffffff;
+      color: #222;
+    }
+    .sans {
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+    .nav-link {
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .hover-underline:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header/Nav -->
+  <header class="border-b border-gray-300 bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-3xl font-bold tracking-wide">Jumbo Hotdog</div>
+
+      <!-- Hamburger Button -->
+      <button id="menu-btn" class="block md:hidden text-gray-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <!-- Desktop Nav -->
+      <nav id="desktop-menu" class="hidden md:flex flex-row items-center space-x-6 sans relative">
+        <a href="index.html" class="nav-link text-gray-800 hover:text-orange-600">Home</a>
+        <a href="#" class="nav-link text-gray-800 hover:text-orange-600">About</a>
+        <div class="relative">
+          <button id="desktop-blog-toggle" class="nav-link text-gray-800 hover:text-orange-600 flex items-center">
+            Blogs ▾
+          </button>
+          <div id="desktop-blog-links" class="absolute top-full right-0 mt-2 w-64 bg-white border border-gray-200 shadow-lg hidden z-50 p-4 space-y-2 text-sm text-right">
+            <a href="maninang.html" class="block text-gray-700 hover:text-orange-600">Brains and Bots: The Ethical and Effective Way for Students to Use AI</a>
+            <hr>
+            <a href="featured.html" class="block text-gray-700 hover:text-orange-600">Computer Science ≠ Software Engineer: Versatile Job Opportunities of Computer Science Program Against a Competitive Job Market and Emergence of AI.</a>
+            <hr>
+            <a href="gurango.html" class="block text-gray-700 hover:text-orange-600">Debugging the Gender Gap!</a>
+            <hr>
+            <a href="parungao.html" class="block text-gray-700 hover:text-orange-600">Game Development: Choosing the Right Engine to Start</a>
+            <hr>
+            <a href="quilantang.html" class="block text-gray-700 hover:text-orange-600">Is AI the End of Programmers or Just the Beginning?</a>
+            <hr>
+            <a href="manese.html" class="block text-gray-700 hover:text-orange-600">Revolutionizing Modern Medicine Through Computer Science</a>
+            <hr>
+            <a href="gonzales.html" class="block text-gray-700 hover:text-orange-600">Tech Is Booming, But Why Do We Still Feel Cooked?</a>
+            <hr>
+            <a href="almanzor.html" class="block text-gray-700 hover:text-orange-600">BLABLA</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 space-y-2 sans">
+      <a href="index.html" class="block nav-link text-gray-800 hover:text-orange-600">Home</a>
+      <a href="#" class="block nav-link text-gray-800 hover:text-orange-600">About</a>
+      <div>
+        <button id="mobile-blog-toggle" class="block nav-link w-full text-left text-gray-800 hover:text-orange-600">Blogs ▾</button>
+        <div id="mobile-blog-links" class="pl-4 mt-1 space-y-1 hidden">
+          <a href="maninang.html" class="block text-gray-700 hover:text-orange-600">Brains and Bots: The Ethical and Effective Way for Students to Use AI</a>
+          <hr>
+          <a href="featured.html" class="block text-gray-700 hover:text-orange-600">Computer Science ≠ Software Engineer: Versatile Job Opportunities of Computer Science Program Against a Competitive Job Market and Emergence of AI.</a>
+          <hr>
+          <a href="gurango.html" class="block text-gray-700 hover:text-orange-600">Debugging the Gender Gap!</a>
+          <hr>
+          <a href="parungao.html" class="block text-gray-700 hover:text-orange-600">Game Development: Choosing the Right Engine to Start</a>
+          <hr>
+          <a href="quilantang.html" class="block text-gray-700 hover:text-orange-600">Is AI the End of Programmers or Just the Beginning?</a>
+          <hr>
+          <a href="manese.html" class="block text-gray-700 hover:text-orange-600">Revolutionizing Modern Medicine Through Computer Science</a>
+          <hr>
+          <a href="gonzales.html" class="block text-gray-700 hover:text-orange-600">Tech Is Booming, But Why Do We Still Feel Cooked?</a>
+          <hr>
+          <a href="almanzor.html" class="block text-gray-700 hover:text-orange-600">BLABLA</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- JS TOGGLE -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileBlogToggle = document.getElementById('mobile-blog-toggle');
+    const mobileBlogLinks = document.getElementById('mobile-blog-links');
+    const desktopBlogToggle = document.getElementById('desktop-blog-toggle');
+    const desktopBlogLinks = document.getElementById('desktop-blog-links');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileBlogToggle.addEventListener('click', () => {
+      mobileBlogLinks.classList.toggle('hidden');
+    });
+
+    desktopBlogToggle.addEventListener('click', () => {
+      desktopBlogLinks.classList.toggle('hidden');
+    });
+
+    // Optional: close dropdown if click outside
+    document.addEventListener('click', (e) => {
+      const isDesktopButton = desktopBlogToggle.contains(e.target);
+      const isDropdown = desktopBlogLinks.contains(e.target);
+      if (!isDesktopButton && !isDropdown) {
+        desktopBlogLinks.classList.add('hidden');
+      }
+    });
+  </script>
+  <!-- Article -->
+  <section class="max-w-3xl mx-auto px-6 py-12">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4 leading-snug text-orange-700">Tech Is Booming, But Why Do We Still Feel Cooked?</h1>
+
+    <div class="mb-6">
+      <img src="https://i.pinimg.com/736x/ea/0c/fc/ea0cfcfa20b09bd0e6ea9ddbe7f1154c.jpg" alt="gonzales image" class="w-full h-80 object-contain rounded shadow mb-2">
+      <p class="text-xs text-gray-500 text-right italic">Photo by <a href="https://in.pinterest.com/pin/1000784348417362368/" target="_blank" class="hover:underline text-orange-700">rzouggaa</a> on Pinterest</p>
+    </div>
+
+    <p class="text-sm text-gray-600 italic mb-4 sans">By John Reshley P. Gonzales &middot; July 22, 2025</p>
+
+    <div class="space-y-6 text-lg leading-relaxed">
+      <p class="indent-8">Recently, I’ve been seeing a lot of TikTok videos talking about how “cooked” computer science graduates and students are. One AI-generated video in TikTok showed a fresh graduate in computer science asking a beggar what his college degree was—and the beggar replied that he graduated with a degree in computer science. As a CS student, I honestly found the video funny, but it also made me worry. It made me ask myself, “Tama bang nag-comsci ako?”</p>
+
+      <p class="indent-8">But the thing is, that video isn’t random or new. I keep seeing posts across social media platforms like Facebook, Reddit, and Instagram about the high unemployment rate among computer science graduates.</p>
+
+      <p class="indent-8">According to an article by Singh in NDTV Education (2025), computer science graduates rank seventh among degree holders with the highest unemployment rate at 6.1%. This isn’t far from computer engineering, which has a 7.5% unemployment rate. Ironic, isn’t it? Technology is booming, and it’s almost impossible to keep up with how fast it’s evolving—especially with the rise of automation and artificial intelligence (AI). Yet, these degrees are among those with the highest unemployment rates.</p>
+
+      <p class="indent-8">There’s definitely fear about being replaced by AI. But on the flip side, the rapid development and integration of AI into various industries are also creating new job opportunities. AIs may be smart, but they aren’t human. They can’t be developed, improved, or maintained without people—us.</p>
+
+      <p class="indent-8">On the brighter side, there are still tons of opportunities for computer science students because the program is broad and covers almost all areas in the IT industry. An article by Evans on edX (2025) even said that there’s no shortage of breakthroughs as technology continues to advance. These breakthroughs create more opportunities, which lead to a higher demand for people who have the right skills to manage and innovate alongside these new technologies. Even Indeed, a popular career platform, published an article discussing the job outlook for CS roles. In the article, Khandelwa mentioned that the U.S. The Bureau of Labor Statistics projects a 15% growth in computer science employment from 2021 to 2031. It also listed roles like computer systems analyst, computer programmer, computer engineer, data scientist, and software engineer—just some of the career paths available to CS graduates.</p>
+
+      <p class="indent-8">Just by hearing those facts, we can already tell that CS students and graduates aren’t actually “cooked”—if they have the necessary technical and soft skills to thrive. As technology levels up, so do the minimum skill requirements. AI won’t take our jobs, as long as we use AI smartly to help us do our jobs. The human brain may not match AI in speed or memory, but we’re still superior when it comes to emotions, creativity, and instinct.</p>
+
+      <p class="indent-8">So, why are many of us still scared about being unemployed? Maybe it’s not really the fear of not getting a job—it’s the fear of not knowing enough in such a vast and ever-changing field. The CS program may open a lot of doors, but that wide range of choices can feel overwhelming and paralyzing.</p>
+
+      <p class="indent-8">Instead of drowning in doubt, start exploring. Learn new skills, join different organizations, join competitions, learn to network and talk to people in the field. Whether you're into AI, cybersecurity, data science, or something niche—there’s a space for you. We’re not cooked. We’re just not done yet. And maybe, just maybe, this is your sign to start figuring out what kind of computer scientist you want to be.</p>
+    </div>
+
+    <!-- References and Back Button -->
+    <div class="mt-10">
+      <h2 class="text-2xl font-bold mb-4 text-orange-700">References</h2>
+      <ul class="list-disc pl-5 text-sm space-y-2">
+        <li><a href="https://www.indeed.com/career-advice/finding-a-job/job-outlook-for-computer-science" target="_blank" class="text-orange-700 hover:underline">Indeed Editorial Team. (2023, September 30). Job outlook for computer science: What to expect. Indeed Career Guide.</a></li>
+        <li><a href="https://www.edx.org/resources/is-computer-science-oversaturated" target="_blank" class="text-orange-700 hover:underline">Evans, C. (2023, December 13). Is computer science oversaturated? edX.</a></li>
+        <li><a href="https://www.ndtv.com/education/computer-science-among-majors-with-highest-unemployment-in-us-8513455" target="_blank" class="text-orange-700 hover:underline">Singh, V. (2025, January 10). Computer science among majors with highest unemployment in US. NDTV Education. </a></li>
+      </ul>
+    </div>
+
+    <div class="mt-10">
+      <a href="index.html" class="inline-block text-sm text-orange-700 border border-orange-700 rounded-full px-6 py-2 hover:bg-orange-50 transition sans"> Back to Home</a>
+    </div>
+  </section>
+
+  <footer class="border-t py-6 mt-12 bg-white">
+    <div class="max-w-6xl mx-auto px-6 text-center text-sm text-gray-500 sans">
+      &copy; 2025 Jumbo Hotdog. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

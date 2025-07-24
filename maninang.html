@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brains and Bots: The Ethical and Effective Way for Students to Use AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Merriweather', serif;
+      background-color: #ffffff;
+      color: #222;
+    }
+    .sans {
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+    .nav-link {
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .hover-underline:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header/Nav -->
+  <header class="border-b border-gray-300 bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-3xl font-bold tracking-wide">Jumbo Hotdog</div>
+
+      <!-- Hamburger Button -->
+      <button id="menu-btn" class="block md:hidden text-gray-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <!-- Desktop Nav -->
+      <nav id="desktop-menu" class="hidden md:flex flex-row items-center space-x-6 sans relative">
+        <a href="index.html" class="nav-link text-gray-800 hover:text-orange-600">Home</a>
+        <a href="#" class="nav-link text-gray-800 hover:text-orange-600">About</a>
+        <div class="relative">
+          <button id="desktop-blog-toggle" class="nav-link text-gray-800 hover:text-orange-600 flex items-center">
+            Blogs ▾
+          </button>
+          <div id="desktop-blog-links" class="absolute top-full right-0 mt-2 w-64 bg-white border border-gray-200 shadow-lg hidden z-50 p-4 space-y-2 text-sm text-right">
+            <a href="maninang.html" class="block text-gray-700 hover:text-orange-600">Brains and Bots: The Ethical and Effective Way for Students to Use AI</a>
+            <hr>
+            <a href="featured.html" class="block text-gray-700 hover:text-orange-600">Computer Science ≠ Software Engineer: Versatile Job Opportunities of Computer Science Program Against a Competitive Job Market and Emergence of AI.</a>
+            <hr>
+            <a href="gurango.html" class="block text-gray-700 hover:text-orange-600">Debugging the Gender Gap!</a>
+            <hr>
+            <a href="parungao.html" class="block text-gray-700 hover:text-orange-600">Game Development: Choosing the Right Engine to Start</a>
+            <hr>
+            <a href="quilantang.html" class="block text-gray-700 hover:text-orange-600">Is AI the End of Programmers or Just the Beginning?</a>
+            <hr>
+            <a href="manese.html" class="block text-gray-700 hover:text-orange-600">Revolutionizing Modern Medicine Through Computer Science</a>
+            <hr>
+            <a href="gonzales.html" class="block text-gray-700 hover:text-orange-600">Tech Is Booming, But Why Do We Still Feel Cooked?</a>
+            <hr>
+            <a href="almanzor.html" class="block text-gray-700 hover:text-orange-600">BLABLA</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 space-y-2 sans">
+      <a href="index.html" class="block nav-link text-gray-800 hover:text-orange-600">Home</a>
+      <a href="#" class="block nav-link text-gray-800 hover:text-orange-600">About</a>
+      <div>
+        <button id="mobile-blog-toggle" class="block nav-link w-full text-left text-gray-800 hover:text-orange-600">Blogs ▾</button>
+        <div id="mobile-blog-links" class="pl-4 mt-1 space-y-1 hidden">
+          <a href="maninang.html" class="block text-gray-700 hover:text-orange-600">Brains and Bots: The Ethical and Effective Way for Students to Use AI</a>
+          <hr>
+          <a href="featured.html" class="block text-gray-700 hover:text-orange-600">Computer Science ≠ Software Engineer: Versatile Job Opportunities of Computer Science Program Against a Competitive Job Market and Emergence of AI.</a>
+          <hr>
+          <a href="gurango.html" class="block text-gray-700 hover:text-orange-600">Debugging the Gender Gap!</a>
+          <hr>
+          <a href="parungao.html" class="block text-gray-700 hover:text-orange-600">Game Development: Choosing the Right Engine to Start</a>
+          <hr>
+          <a href="quilantang.html" class="block text-gray-700 hover:text-orange-600">Is AI the End of Programmers or Just the Beginning?</a>
+          <hr>
+          <a href="manese.html" class="block text-gray-700 hover:text-orange-600">Revolutionizing Modern Medicine Through Computer Science</a>
+          <hr>
+          <a href="gonzales.html" class="block text-gray-700 hover:text-orange-600">Tech Is Booming, But Why Do We Still Feel Cooked?</a>
+          <hr>
+          <a href="almanzor.html" class="block text-gray-700 hover:text-orange-600">BLABLA</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- JS TOGGLE -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileBlogToggle = document.getElementById('mobile-blog-toggle');
+    const mobileBlogLinks = document.getElementById('mobile-blog-links');
+    const desktopBlogToggle = document.getElementById('desktop-blog-toggle');
+    const desktopBlogLinks = document.getElementById('desktop-blog-links');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileBlogToggle.addEventListener('click', () => {
+      mobileBlogLinks.classList.toggle('hidden');
+    });
+
+    desktopBlogToggle.addEventListener('click', () => {
+      desktopBlogLinks.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', (e) => {
+      const isDesktopButton = desktopBlogToggle.contains(e.target);
+      const isDropdown = desktopBlogLinks.contains(e.target);
+      if (!isDesktopButton && !isDropdown) {
+        desktopBlogLinks.classList.add('hidden');
+      }
+    });
+  </script>
+
+  <!-- Article -->
+  <section class="max-w-3xl mx-auto px-6 py-12">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4 leading-snug text-orange-700">Brains and Bots: The Ethical and Effective Way for Students to Use AI </h1>
+
+    <div class="mb-6">
+      <img src="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2024/07/ai-generated-classroom-with-students-learning.jpeg?q=70&fit=crop&w=1100&h=618&dpr=1" alt="Maninang image" class="w-full h-80 object-cover rounded shadow mb-2">
+      <p class="text-xs text-gray-500 text-right italic">Photo by <a href="https://www.makeuseof.com/essential-ai-tools-and-tips-for-every-student/" target="_blank" class ="hover:underline text-orange-700">Danny Maiorca</a> on makeuseof</p>
+    </div>
+
+    <p class="text-sm text-gray-600 italic mb-4 sans">By Allein Dane Maninang &middot; July 22, 2025</p>
+
+    <div class="space-y-6 text-lg leading-relaxed">
+      <p class="indent-8">Artificial intelligence (AI) is technology that enables computers and machines to simulate human learning, comprehension, problem-solving, decision-making, creativity, and autonomy (Stryker & Kavlakoglu, 2025). It has been used in many fields. In this day and age, artificial intelligence is one of the well-known learning or cheating tools of many students. Some students may just use artificial intelligence to make up answers, while some students use artificial intelligence for their studies.</p>
+
+      <p class="indent-8">One computer science student states that as much as possible he uses artificial intelligence to learn. He uses it to ask questions about what the error is within the code that he has been debugging for a long period of time, and when artificial intelligence detects it, he will analyze it further based on the answer of the artificial intelligence. He uses it to ask for coding problems that he can replicate so that he can practice coding with a particular programming language and particular project. He, of course, not only uses it in programming but also in solving mathematical equations. He uses it by first solving the problems himself and then asking artificial intelligence to solve them to compare if what he answered is right and analyze those problems that he got wrong. He also uses it in writing by sometimes writing first what he had in mind and then checking it with artificial intelligence, or sometimes the opposite: he asks for ideas and then creates his own composition.</p>
+
+      <p class="indent-8">This is one way to use artificial intelligence in learning by students. He does not only abuse artificial intelligence to just get answers, but he uses the ability of artificial intelligence to learn more about what he is trying to learn. That is not effective learning with the use of artificial intelligence. There are many more ways that a student can utilize artificial intelligence for ethical and effective use for learning.</p>
+
+      <p class="indent-8">But there are always downsides to everything, including artificial intelligence. As supported by the University of Maryland (2024), AI also often generates misinformation. Oftentimes, the answers produced by AI will be a mixture of truth and fiction. Artificial intelligence sometimes refers to old or outdated information that may not be up to date with what the student is learning; this may lead to wrong answers that the artificial intelligence releases. Artificial intelligence also sometimes refers to fake information that is readily available on the internet, which may also lead, as said a while ago, to wrong answers that artificial intelligence produces.</p>
+
+      <p class="indent-8">It is mentioned by the University of Illinois Urbana-Champaign (2024) that cheating and plagiarism are chief among the AI concerns raised by educators. Which makes them aware of the power that artificial intelligence holds, and they also use it to fight AI-generated work, which can lead to a student that has been caught to fail or, worse yet, being expelled. Not only do professors take notice of the power, but also schools and educational organizations know the potential that artificial intelligence holds. That is why they are now enforcing rules on the usage and abuse of artificial intelligence in learning.</p>
+
+      <p class="indent-8">It is important to take note that students should use artificial intelligence in a way that, somewhat and somehow, they learn from it. They should consider the long-term effect that this brings, whether they use artificial intelligence in an effective way or not. Students should also consider the balance of using artificial intelligence with independent thinking, effort, and self-discipline. Having a power that is readily available holds a lot of potential, and it's up to the student how he wants to use that potential.</p>
+    </div>
+
+    <!--Ref-->
+    <div class="mt-10">
+      <h2 class="text-2xl font-bold mb-4 text-orange-700">References</h2>
+      <ul class="list-disc pl-5 text-sm space-y-2">
+        <li><a href="https://education.illinois.edu/about/news-events/news/article/2024/10/24/ai-in-schools--pros-and-cons" target="_blank" class="text-orange-700 hover:underline">University of Illinois Urbana-Champaign. (October 24, 2024). AI in Schools: Pros and Cons.</a></li>
+        <li><a href="https://lib.guides.umd.edu/c.php?g=1340355&p=9880574" target="_blank" class="text-orange-700 hover:underline">University of Maryland. (December 4, 2024). Artificial Intelligence (AI) and Information Literacy.</a></li>
+        <li><a href="https://www.ibm.com/think/topics/artificial-intelligence" class="text-orange-700 hover:underline">Stryker, C., & Kavlakoglu, E. (August 9, 2024). Artificial intelligence.</a></li>
+      </ul>
+    </div>
+
+    <div class="mt-10">
+      <a href="index.html" class="inline-block text-sm text-orange-700 border border-orange-700 rounded-full px-6 py-2 hover:bg-orange-50 transition sans"> Back to Home</a>
+    </div>
+  </section>
+
+  <footer class="border-t py-6 mt-12 bg-white">
+    <div class="max-w-6xl mx-auto px-6 text-center text-sm text-gray-500 sans">
+      &copy; 2025 Jumbo Hotdog. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
+
+
